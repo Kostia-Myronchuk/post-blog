@@ -1,0 +1,28 @@
+<%- include('./partials/header.ejs') %> <%- include('./partials/nav.ejs') %>
+
+<div
+  class="info1"
+  style="max-width: 520px; margin: 0 auto; border: 10px solid green"
+>
+  <p>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores
+    voluptas quod, ducimus dolorum architecto in, laboriosam quos totam soluta
+    fugiat, a illum quibusdam minus.
+  </p>
+  <ul>
+    <% if(posts.length) {%> <%posts.forEach(({id, title, author}) => { %>
+    <li>
+      <article>
+        <!-- <h2>
+              <a href="/employers/<%= id %>"><%= title%></a>
+            </h2> -->
+        <div class="info">
+          <b>Назва:</b> <%=title %>.<br />
+          <b>Автор:</b> <%=author%>. <br />
+        </div>
+      </article>
+    </li>
+    <%}) %><%}%>
+  </ul>
+</div>
+<%- include('./partials/footer.ejs') %>
